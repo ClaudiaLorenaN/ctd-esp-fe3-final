@@ -1,122 +1,234 @@
+/* Estilos generales (aplicados a todos los temas) */
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh; /* This ensures the body fills the viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+#root > div {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-top: 20px;
+}
+
+.dark h1 {
+  color: white;
+}
+
+/* Estilos para el tema claro (light) */
+.light {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.light a {
+  color: #333;
+}
+
+.light button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.light button:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para el tema oscuro (dark) */
+.dark {
+  background-color: #2b2b2b;
+  color: #fdf9f9;
+}
+
+.dark a {
+  color: #f5f5f5;
+}
+
+.dark button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dark button:hover {
+  background-color: #e53935;
+}
+
+/* Estilos para el navbar */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #4CAF50;
+}
+
+.dark nav {
+  background-color: #1e1e1e;
+}
+
+.dark nav a:hover {
+  color: #f44336;
+}
+
+/* Estilos para botones generales */
+button {
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Estilos para la tarjeta (Card) */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  width: 250px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.dark .card h2 {
+  color: white;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark .card {
+  background-color: #333;
+  color: white;
+}
+
+/* Grid para las tarjetas */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.favButton {
+  background-color: #ff9800;
   padding: 10px;
   border: none;
   width: 100%;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-h1{
-  text-align: center;
+.favButton:hover {
+  background-color: #fb8c00;
 }
 
-nav{
-  display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
-}
-
-a{
-  color: #000;
-  text-decoration: none;
-  margin: 5px;
-  cursor: pointer;
-}
-a:hover{
-  color: rgb(136, 136, 136);
-} 
-
+/* Estilos para el footer */
 footer {
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  width: 100%;
+  background-color: #f5f5f5;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
-footer > img{
+footer img {
   width: 200px;
   margin: 0;
 }
-footer > p{
+
+footer p {
   margin: 0;
   padding-top: 0.7rem;
 }
 
-form{
+.dark footer {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 300px;
   height: 100px;
   margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+.dark form {
+  background-color: #333;
 }
 
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
-}
-
-.card-grid{
-  display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
-  width: 90vw;
-  height: auto;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-.dark{
-  background-color: #12121296;
-  color: white;
-}
-.dark > a {
-  color: white;
+button.theme {
+  padding: 0;
+  font-size: 3rem;
 }

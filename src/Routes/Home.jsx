@@ -1,17 +1,27 @@
-import React from 'react'
-import Card from '../Components/Card'
+import React, { useEffect, useState } from "react";
+import Card from "../Components/Card";
+import { useCharStates } from "../utils/global.context";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
-const Home = () => {
-  return (
-    <main className="" >
-      <h1>Home</h1>
-      <div className='card-grid'>
-        {/* Aqui deberias renderizar las cards */}
-      </div>
-    </main>
-  )
-}
+//La API a utilizar sera la siguiente: https://jsonplaceholder.typicode.com/users
+//Y para cada dentista en especifico: https://jsonplaceholder.typicode.com/users/:id
 
-export default Home
+const Home = () => {
+  const { list } = useCharStates();
+  
+
+  return (
+    <>
+      <h1>Conozca excelentes profesionales</h1>
+      <main className="">
+        <div className="card-grid">
+          { list.map( (char)=> <Card key={char.id} char = {char}/>)}
+          {/* Aqui deberias renderizar las cards */}
+        </div>
+      </main>
+    </>
+  );
+};
+
+export default Home;
