@@ -27,7 +27,7 @@ const Card = ({ char }) => {
 
       {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
       <button onClick={addFav} className="favButton">
-        Add fav ❤️
+        Añadir favorito ❤️
       </button>
 
       {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
