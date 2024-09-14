@@ -30,7 +30,7 @@ const Form = () => {
     // valid email: example.user+123@gmail.com
 
     if (
-      usuario.name.trim().length >= 3 &&
+      usuario.name.trim().length > 5 &&
       emailRegex.test(usuario.email)
     ) {
       setShow(true);
